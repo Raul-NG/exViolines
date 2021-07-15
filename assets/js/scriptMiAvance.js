@@ -4,7 +4,7 @@ function move() {
     var id = setInterval(frame, 10);
     function frame() {
         // Aqui colocar el porcentaje del progreso
-      if (width >= 100) {
+      if (width >= 50) {
         clearInterval(id);
       } else {
         width++; 
