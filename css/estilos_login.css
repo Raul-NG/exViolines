@@ -22,10 +22,13 @@ main{
 }
 
 .contenedor_todo{
+    height: 100%;
     width: 100%;
     max-width: 800px;
     margin: auto;
     position: relative;
+    padding-top: 100px;
+    justify-content: center;
 }
 
 .caja_trasera{
@@ -68,6 +71,7 @@ main{
 .caja_trasera button:hover{
     background: #fff;
     color: rgba(110, 64, 23, 0.7);
+    padding: 30px;
 }
 
 /* Formularios */
@@ -143,6 +147,7 @@ main{
 .formulario_login{
     opacity: 1;
     display: block;
+    margin-top: 30px;
 }
 
 .formulario_register{
