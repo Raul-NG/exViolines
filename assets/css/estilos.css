@@ -77,7 +77,6 @@
 .card-text {
   min-height: 10rem;
   margin-top: 10%;
-  text-align: center;
 }
 
 .bar {
@@ -133,4 +132,9 @@
 .status__sincompletar{
   color: #da5151;
   font-size: 20px;
+}
+
+.card-points{
+  color:#00c070;
+  font-weight: 600;
 }
