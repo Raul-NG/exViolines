@@ -26,30 +26,7 @@ session_start();
 
 <body>
   <div>
-    <nav class="
-          navbar navbar-expand-lg navbar-dark
-          bg-dark
-          flex-column flex-sm-row
-        ">
-      <a class="navbar-brand" href="http://vfpmexico.org/">Violines por la Paz A.C.</a>
-      <div class="container-fluid justify-content-end">
-        <ul class="nav">
-        <?php
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-            $out = '<li class="nav-item"> <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="miAvance.php">Mi Avance</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="misRetos.html">Mis Retos</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="misLogros.html">Mis Logros</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="miSeguimiento.html">Mi Seguimiento</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="php/logout_user.php">Cerrar sesion</a> </li>';
-        }else{
-            $out = '<li class="nav-item"> <a class="nav-link active" aria-current="page" href="login.php">Iniciar sesión o Registrarse</a> </li>';
-        }
-        echo $out;
-      ?>   
-        </ul>
-      </div>
-    </nav>
+    <?php include('navbar.php');?>
     <div class="
           cover
           d-flex

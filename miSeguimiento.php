@@ -1,5 +1,9 @@
-<html>
+<?php
+session_start();
+?>
 
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,35 +19,7 @@
 </head>
 
 <body>
-  <nav class="
-        navbar navbar-expand-lg navbar-dark
-        bg-dark
-        flex-column flex-sm-row
-      ">
-    <a class="navbar-brand" href="http://vfpmexico.org/">Violines por la Paz A.C.</a>
-    <div class="container-fluid justify-content-end">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="miAvance.html">Mi Avance</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="misRetos.html">Mis Retos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="misLogros.html">Mis Logros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="miSeguimiento.html">Mi Seguimiento</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="miPerfil.html">Mi Perfil</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<?php include('navbar.php');?>
   <div class="main__container">
     <div class="preguntas">
       <form action="action_page.php">
