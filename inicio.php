@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Link fuentes https://fonts.google.com -->
   <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet" />
-  <title>Exviolines/Inicio</title>
+  <title>Exviolines</title>
 </head>
 
 <body>
@@ -30,24 +34,19 @@
       <a class="navbar-brand" href="http://vfpmexico.org/">Violines por la Paz A.C.</a>
       <div class="container-fluid justify-content-end">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="miAvance.html">Mi Avance</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="misRetos.html">Mis Retos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="misLogros.html">Mis Logros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="miSeguimiento.html">Mi Seguimiento</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="miPerfil.html">Mi Perfil</a>
-          </li>
+        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            $out = '<li class="nav-item"> <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="miAvance.php">Mi Avance</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="misRetos.html">Mis Retos</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="misLogros.html">Mis Logros</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="miSeguimiento.html">Mi Seguimiento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="php/logout_user.php">Cerrar sesion</a> </li>';
+        }else{
+            $out = '<li class="nav-item"> <a class="nav-link active" aria-current="page" href="login.php">Iniciar sesión o Registrarse</a> </li>';
+        }
+        echo $out;
+      ?>   
         </ul>
       </div>
     </nav>
@@ -59,7 +58,7 @@
           flex-column
         ">
       <a href="http://vfpmexico.org/">
-        <img id="imagen-logo" src="imagenes/Violines.png" alt="Logo de Violines por la Paz A.C." />
+        <img id="imagen-logo" src="assets/images/Violines.png" alt="Logo de Violines por la Paz A.C." />
       </a>
       <h1 id="h1-inicio">EXAVIOLINES</h1>
       <h2 id="h2-inicio">¡TODOS TENEMOS TALENTO, SOLO FALTA ENCONTRARLO!</h2>
