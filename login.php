@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,15 +68,17 @@
 
                     <!--Si necesitan otra entrada avisenme (Hugo)-->
                     <h2>Regístrarse</h2>
-                    <input typer="text" placeholder="Nombre Completo" name="nombre_completo" required>
+                    <input typer="text" placeholder="Nombre" name="nombre" required>
+                    <input typer="text" placeholder="Apellido" name="apellido" required>
                     <input typer="text" placeholder="Correo Electronico" name="correo" required>
                     <input typer="password" placeholder="Contraseña" name="contrasena" required>
-                    <select name="grado" required>
+                    <input typer="text" placeholder="Grado" name="grado_id" required>
+                    <!-- <select name="grado" required>
                         <option value="" disable selected hidden>Selecciona tu Grado</option>
-                        <option>Primero</option>
-                        <option>Segundo</option>
-                        <option>Tercero</option>
-                    </select>
+                        <option name="grado_id">Primero</option>
+                        <option name="grado_id">Segundo</option>
+                        <option name="grado_id">Tercero</option>
+                    </select> -->
 
                     <button>Registrarse</button>
 
