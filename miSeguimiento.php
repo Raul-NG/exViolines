@@ -15,7 +15,7 @@ session_start();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Link fuentes https://fonts.google.com -->
   <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet" />
-  <title>Exviolines/Seguimiento</title>
+  <title>Seguimiento</title>
 </head>
 
 <body>

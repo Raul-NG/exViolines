@@ -16,7 +16,7 @@ session_start();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Link fuentes https://fonts.google.com -->
   <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet" />
-  <title>Exviolines/Retos</title>
+  <title>Mis Retos</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@ session_start();
     <div class="row justify-content-center">
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto1.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto1.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 1: Reading and vocabulary</h2>
@@ -42,7 +42,7 @@ session_start();
               picture of them.
             </p>
             <div class="center-button">
-              <a href="/recursosRetos/reto1.jpg" download="Reading and vocabulary">
+              <a href="./recursosRetos/reto1.jpg" download="Reading and vocabulary">
                 <button type="button" class="btn btn-primary">Descargar Recurso</button>
               </a>
             </div>
@@ -56,7 +56,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto2.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto2.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 2: Present Simple - Negative and Positive Sentences</h2>
@@ -85,7 +85,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto3.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto3.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 3: La jungle et ses animaux</h2>
@@ -113,7 +113,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto4.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto4.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 4: Verbe être et avoir</h2>
@@ -141,7 +141,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto5.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto5.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 5: Meistermaler</h2>
@@ -169,7 +169,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto6.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto6.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 6: Fragenkette</h2>
@@ -197,7 +197,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto7.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto7.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 7: Escritura creativa </h2>
@@ -225,7 +225,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto8.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto8.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 8: Crea tu cuento</h2>
@@ -255,7 +255,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto9.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto9.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 9: Historia de las artes marciales</h2>
@@ -284,7 +284,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto10.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto10.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 10: Demostrando movimientos básicos</h2>
@@ -313,7 +313,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto11.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto11.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 11: Matematicas</h2>
@@ -341,7 +341,7 @@ session_start();
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
         <div class="card">
-          <img src="/imagenes/retos_imagenes/reto12.jpg" class="card-img-top"
+          <img src="./imagenes/retos_imagenes/reto12.jpg" class="card-img-top"
             alt="Palomitas, boletos para el cine y rollo de película" />
           <div class="card-body">
             <h2 class="card-title">Reto 12: Matematicas</h2>

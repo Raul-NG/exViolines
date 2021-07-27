@@ -22,7 +22,7 @@ session_start();
       href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Exviolines/Logros</title>
+    <title>Logros</title>
   </head>
   <body>
   <?php include('navbar.php');?>
@@ -30,7 +30,7 @@ session_start();
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
           <div class="card">
-            <img src="/imagenes/medalla.jpg" class="card-img-top"
+            <img src="./imagenes/medalla.jpg" class="card-img-top"
               alt="Palomitas, boletos para el cine y rollo de película" />
             <div class="card-body">
               <h2 class="card-title">Mis Puntos</h2>
