@@ -74,23 +74,23 @@ INSERT INTO grados(anno, grado)
 VALUES(2021, 7);
 
 
-INSERT INTO Usuarios(nombre, apellido, correo, password, grado_id, rol)
+INSERT INTO usuarios(nombre, apellido, correo, password, grado_id, rol)
 VALUES ('admin', 'admin', 'admin@admin.com', 'admin', 7, 'admin');
 
 
-INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
+INSERT INTO retos(nombre, categoria, descripcion, puntos, grado_id)
 VALUES ('Reto 1: Reading and vocabulary', 'Ingles', 'Read carefully what the monster says and answer the questions below. You can write the answers or upload a picture of them.', 10, 1);
 
-INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
+INSERT INTO retos(nombre, categoria, descripcion, puntos, grado_id)
 VALUES ('Reto 2: Present Simple - Negative and Positive Sentences', 'Ingles', 'Fill the blanks with the correct form of present simple of each verb in parentheses, some of them are positive and others are negative. You can write the answers or upload a picture of them.', 10, 4);
 
-INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
+INSERT INTO retos(nombre, categoria, descripcion, puntos, grado_id)
 VALUES ('Reto 3: La jungle et ses animaux', 'Frances', "Associez le mot à l'image correspondante.", 10, 1);
 
-INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
+INSERT INTO retos(nombre, categoria, descripcion, puntos, grado_id)
 VALUES ('Reto 4: Verbe être et avoir', 'Frances', 'Résoudre les éléments suivants être.', 10, 7);
 
-INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
+INSERT INTO retos(nombre, categoria, descripcion, puntos, grado_id)
 VALUES ('Reto 5: Meistermaler', 'Aleman', 'Dibuja cada objeto con su color correspondiente.', 10, 7);
 
 -- INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
@@ -107,3 +107,7 @@ VALUES ('Reto 5: Meistermaler', 'Aleman', 'Dibuja cada objeto con su color corre
 
 -- INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
 -- VALUES ('', '', '', 10, 1);
+
+
+INSERT INTO logros(usuario_id, reto_id, archivo, fecha)
+VALUES (1, 4, "ASDASD", NOW());
