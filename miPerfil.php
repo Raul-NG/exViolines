@@ -62,9 +62,6 @@ include './php/conexion_be.php';
             <div class="col-12 col-sm-6 col-md-4 col-lg-8 mt-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="text-center m-2">
-                            <a type="button" class="btn btn-danger btn-lg cerrar-sesion" href="./php/logout_user.php">Cerrar sesion</a>
-                        </div>
                         <div class="my-4">
                             <h3>Próximo evento</h3>
                             <img src="imagenes/evento_proximo.jpg" class="img-fluid">
@@ -72,23 +69,26 @@ include './php/conexion_be.php';
                         <h3>Modificar perfil</h3>
                         <!--INFORMACION-->
                         <form action="./php/update_nombre.php" method="post">
-                            <div class="form input-group mb-3 mt-3">
-                                <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="Nuevo nombre">
-                                <button class="btn btn-primary perfil-cambiar-nombre">Cambiar nombre</button>
-                            </div>
-                        </form>
-                        <form action="./php/update_apellido.php" method="post">
-                            <div class="form input-group mb-3 mt-3">
-                                <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="Nuevo apellido">
-                                <button class="btn btn-primary perfil-cambiar-nombre">Cambiar apellido</button>
-                            </div>
-                        </form>
-                        <form action="./php/update_email.php" method="post">
-                            <div class="form input-group mb-3 mt-3">
-                                <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="nuevo@correo.com">
-                                <button class="btn btn-primary perfil-cambiar-nombre">Cambiar email</button>
-                            </div>
-                        </form>
+                        <div class="form input-group mb-3 mt-3">
+                            <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="Nuevo nombre">
+                            <button class="btn btn-primary perfil-cambiar-nombre">Cambiar nombre</button>
+                        </div>
+                    </form>
+                    <form action="./php/update_apellido.php" method="post">
+                    <div class="form input-group mb-3 mt-3">
+                        <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="Nuevo apellido">
+                        <button class="btn btn-primary perfil-cambiar-nombre">Cambiar apellido</button>
+                    </div>
+                </form>
+                <form action="./php/update_email.php" method="post">
+                <div class="form input-group mb-3 mt-3">
+                    <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="nuevo@correo.com">
+                    <button class="btn btn-primary perfil-cambiar-nombre">Cambiar email</button>
+                </div>
+                <div class="text-center m-2">
+                    <a type="button" class="btn btn-danger btn-lg cerrar-sesion" href="./php/logout_user.php">Cerrar sesion</a>
+                </div>
+            </form>
                     </div>
                 </div>
             </div>
