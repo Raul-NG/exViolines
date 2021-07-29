@@ -75,7 +75,7 @@
 }
 
 .card-text {
-  min-height: 10rem;
+  min-height: 5rem;
   margin-top: 10%;
 }
 
@@ -116,6 +116,13 @@
 .card-points{
   color:#00c070;
   font-weight: 600;
+}
+
+.card-points-2{
+  color:#00c070;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
 }
 
 .main__container{
