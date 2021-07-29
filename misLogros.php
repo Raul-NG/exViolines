@@ -1,5 +1,6 @@
 <?php
 session_start();
+include './php/conexion_be.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ session_start();
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/estilos.css" />
+    <link rel="stylesheet" href="./assets/css/estilos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Link fuentes https://fonts.google.com -->
@@ -25,28 +26,34 @@ session_start();
     <title>Logros</title>
   </head>
   <body>
-  <?php include('navbar.php');?>
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
-          <div class="card">
-            <img src="./imagenes/medalla.jpg" class="card-img-top"
-              alt="Palomitas, boletos para el cine y rollo de película" />
-            <div class="card-body">
-              <h2 class="card-title">Mis Puntos</h2>
-              <p class="card-points">
-                2100 Puntos 
-              </p>
-              <p class="card-text">
-                Tus puntos acumulados por haber completado los retos.
-              </p>
-              <div class="center-button">
-                <a href="/miPerfil.html">
-                  <button type="button" class="btn btn-primary">Ir a mi Perfil</button>
-                </a>
+    <?php include('navbar.php');?>
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
+            <div class="card">
+              <img src="./imagenes/medalla.jpg" class="card-img-top"
+                alt="Palomitas, boletos para el cine y rollo de película" />
+              <div class="card-body">
+                <h2 class="card-title">Mis Puntos</h2>
+                  <?php
+                  $puntos = mysqli_query($conexion, "SELECT SUM(puntos) FROM logros
+                  JOIN retos ON retos.reto_id = logros.reto_id
+                  JOIN usuarios ON usuarios.usuario_id = logros.usuario_id
+                  WHERE correo = '$_SESSION[user]' ");
+                  while ($res = mysqli_fetch_assoc($puntos)) {
+                    echo "<p class='card-points-2'> " . $res['SUM(puntos)'] . " puntos</p>";
+                  }
+                  ?>
+                <p class="card-text">
+                  Puedes acumular mas puntos completando los retos.
+                </p>
+                <div class="center-button">
+                  <a href="/miPerfil.html">
+                    <button type="button" class="btn btn-primary">Ir a mi Perfil</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
   </body>
 </html>
