@@ -10,12 +10,12 @@
     //Si se quisiera encriptar la contrasena esta la siguiente linea de codigo
     //$contrasena = hash('sha512', $contrasena);
 
-    $query = "INSERT INTO alumnos(nombre, apellidos, correo, password, grado_id)
+    $query = "INSERT INTO usuarios(nombre, apellido, correo, password, grado_id)
     VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$grado_id')";
 
     //Verficiar que el correo no se repita en la Base de Datos
 
-    $verificar_correo = mysqli_query($conexion, "SELECT * FROM alumnos WHERE correo='$correo' ");
+    $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo' ");
 
     if(mysqli_num_rows($verificar_correo) >0){
         echo'
@@ -28,7 +28,7 @@
         exit();
     }
 
-    $ejecutar = mysqli_query($conexion, $query);
+    $ejecutar = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
 
     if($ejecutar){
         echo '
