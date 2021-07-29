@@ -29,6 +29,7 @@ CREATE TABLE `usuarios` (
   `seguimiento` varchar(100) DEFAULT 'TBA',
   `asistenciaEventos` boolean DEFAULT False,
   `grado_id` int,
+  `fecha` timeStamp default NOW(),
   `rol` varchar(100) DEFAULT 'Alumno',
   PRIMARY KEY (`usuario_id`),
   FOREIGN KEY (`grado_id`) REFERENCES `grados`(`grado_id`)
@@ -38,7 +39,7 @@ CREATE TABLE `logros` (
   `usuario_id` int,
   `reto_id` int,
   `archivo` varbinary(32),
-  `fecha` timeStamp,
+  `fecha` timeStamp default NOW(),
   PRIMARY KEY (`usuario_id`, `reto_id`),
   FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`usuario_id`),
   FOREIGN KEY (`reto_id`) REFERENCES `retos`(`reto_id`)
@@ -119,8 +120,8 @@ VALUES ('Reto 5: Meistermaler', 'Aleman', 'Dibuja cada objeto con su color corre
 -- VALUES ('', '', '', 10, 1);
 
 
-INSERT INTO logros(usuario_id, reto_id, archivo, fecha)
-VALUES (1, 4, "ASDASD", NOW());
+INSERT INTO logros(usuario_id, reto_id, archivo)
+VALUES (1, 4, "ASDASD");
 
-INSERT INTO logros(usuario_id, reto_id, archivo, fecha)
-VALUES (1, 5, "ASDASD", NOW());
+INSERT INTO logros(usuario_id, reto_id, archivo)
+VALUES (1, 5, "ASDASD");
