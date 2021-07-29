@@ -10,7 +10,6 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
             $out = '
             <li class="nav-item"> <a class="nav-link" href="inicio.php">Inicio</a> </li>
-            <li class="nav-item"> <a class="nav-link" href="miAvance.php">Mi Avance</a> </li>
             <li class="nav-item"> <a class="nav-link" href="misRetos.php">Mis Retos</a> </li>
             <li class="nav-item"> <a class="nav-link" href="misLogros.php">Mis Logros</a> </li>
             <li class="nav-item"> <a class="nav-link" href="miSeguimiento.php">Mi Seguimiento</a> </li>
