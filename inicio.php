@@ -34,9 +34,9 @@ session_start();
           align-items-center
           flex-column
         ">
-      <a href="http://vfpmexico.org/">
+      <!-- <a href="http://vfpmexico.org/">
         <img id="imagen-logo" src="assets/images/Violines.png" alt="Logo de Violines por la Paz A.C." />
-      </a>
+      </a> -->
       <h1 id="h1-inicio">EXAVIOLINES</h1>
       <h2 id="h2-inicio">¡TODOS TENEMOS TALENTO, SOLO FALTA ENCONTRARLO!</h2>
       <p id="p1-inicio">
