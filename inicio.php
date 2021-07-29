@@ -43,18 +43,6 @@ session_start();
         Nuestro camino aún no termina. Sigue alcanzando nuevas metas y no
         pierdas el contacto con tus amigos.
       </p>
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <a href="login.html">
-          <button type="button" class="btn btn-outline-light">
-            Iniciar Sesión
-          </button>
-        </a>
-        <a href="login.html">
-          <button type="button" class="btn btn-outline-light">
-            Crear Cuenta
-          </button>
-        </a>
-      </div>
     </div>
   </div>
 </body>
