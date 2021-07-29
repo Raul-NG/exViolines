@@ -60,7 +60,7 @@ session_start();
                 <div class="card">
                     <div class="card-body">
                         <div class="text-center m-2">
-                            <button type="button" class="btn btn-danger btn-lg cerrar-sesion">Cerrar sesion</button>
+                            <a type="button" class="btn btn-danger btn-lg cerrar-sesion" href="./php/logout_user.php">Cerrar sesion</a>
                         </div>
                         <div class="my-4">
                             <h3>Próximo evento</h3>
