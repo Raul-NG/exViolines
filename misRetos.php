@@ -28,7 +28,7 @@ include './php/conexion_be.php';
       <div class="row justify-content-center">
         <h3>Por entregar</h3>
     <?php
-      $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion, image_id FROM retos
+      $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion, image_id, reto_id FROM retos
       JOIN usuarios ON retos.grado_id = usuarios.grado_id
       WHERE usuarios.correo = '$_SESSION[user]' AND retos.reto_id
       NOT IN
@@ -58,6 +58,7 @@ include './php/conexion_be.php';
               </div>
               Sube tu evidencia aqui
               <form action='/action_page.php'>
+                <input type='hidden' name='reto' value='" . $row['reto_id'] . "' />
                 <input type='file' id='myFile' name='filename'>
                 <input type='submit'>
               </form>
@@ -65,11 +66,13 @@ include './php/conexion_be.php';
           </div>
         </div>";} 
     ?>
-    <h3>Entregados</h3>
+    <div style="padding: 15px;">
+      <h3>Entregados</h3>
+    </div>
     <?php
-      $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion, image_id FROM retos
-      JOIN usuarios ON retos.grado_id = usuarios.grado_id
-      JOIN logros ON logros.reto_id = retos.reto_id
+      $retos = mysqli_query($conexion, "SELECT * FROM logros
+      JOIN usuarios ON logros.usuario_id = usuarios.usuario_id
+      JOIN retos ON logros.reto_id = retos.reto_id
       WHERE usuarios.correo = '$_SESSION[user]' AND retos.reto_id");
       while( $row = mysqli_fetch_assoc($retos)) {
         echo "
