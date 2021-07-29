@@ -6,13 +6,13 @@
     $contrasena = $_POST['contrasena'];
 
 
-    $validar_login = mysqli_query($conexion, "SELECT * FROM alumnos WHERE correo='$correo'
+    $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo'
                     and password= '$contrasena' "); 
 
     if(mysqli_num_rows($validar_login) >0){
         $_SESSION['loggedin'] = true;
         $_SESSION['user'] = $correo;
-        header("location: ../inicio.php");
+        header("Location: ../inicio.php");
         exit;
     }else{
         echo '
