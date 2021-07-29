@@ -1,5 +1,6 @@
 <?php
 session_start();
+include './php/conexion_be.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ session_start();
     pierdas el contacto con tus amigos. En Violines por la Paz A.C. buscamos que todos los niños tengan una educación integral y balanceada." />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/assets/css/estilos.css" />
+  <link rel="stylesheet" href="./assets/css/estilos.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Link fuentes https://fonts.google.com -->
@@ -34,25 +35,27 @@ session_start();
 
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
                 <div class="card">
-                    <img src="imagenes/perfiles/perfil-1.jpg" class="card-img-top perfil-foto">
-                    <div class="card-body">
-                        <h2 class="text-center perfil-nombre">Juanito Alcachofa</h2>
-                        <p class="text-center perfil-antiguedad">ExViolin desde 24 de mayo del 2021</p>
-                        <table class="table table-borderless">
-                            <tr>
-                                <td><b>Email</b></td>
-                                <td class="perfil-email">fulano@hotmail.com</td>
-                            </tr>
-                            <tr>
-                                <td><b>Puntos acumulados</b></td>
-                                <td class="perfil-puntos">42069</td>
-                            </tr>
-                            <tr>
-                                <td><b>Grado de egreso</b></td>
-                                <td class="perfil-grado">2</td>
-                            </tr>
-                        </table>
-                    </div>
+                    <?php
+                    $info = mysqli_query($conexion, "SELECT usuario_id, nombre, apellido, grado_id, fecha FROM exviolines.usuarios
+                    WHERE correo = '$_SESSION[user]'");
+                    while( $row = mysqli_fetch_assoc($info)) {
+                        echo "<img src='https://robohash.org/". $row['usuario_id'] ."&size=300x300' class='card-img-top perfil-foto'>
+                        <div class='card-body'>
+                            <h2 class='text-center perfil-nombre'>". $row['nombre'] . " " . $row["apellido"] ."</h2>
+                            <p class='text-center perfil-antiguedad'>ExViolin desde ". $row['fecha'] ."</p>
+                            <table class='table table-borderless'>
+                                <tr>
+                                    <td><b>Email</b></td>
+                                    <td class='perfil-email'>". $_SESSION['user'] ."</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Grado de egreso</b></td>
+                                    <td class='perfil-grado'>". $row['grado_id'] ."</td>
+                                </tr>
+                            </table>
+                        </div>";
+                    }
+                    ?>
                 </div>
             </div>
 
@@ -68,36 +71,28 @@ session_start();
                         </div>
                         <h3>Modificar perfil</h3>
                         <!--INFORMACION-->
-                        <div class="form input-group mb-3 mt-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Nuevo Nombre">
-                            <button type="button" class="btn btn-primary perfil-cambiar-nombre">Cambiar nombre</button>
-                        </div>
-                        <div class="form input-group mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Nuevos Apellidos">
-                            <button type="button" class="btn btn-primary perfil-cambiar-apellido">Cambiar apellidos</button>
-                        </div>
-
-                        <div class="form input-group mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="nuevo@correo.com">
-                            <button type="button" class="btn btn-primary perfil-cambiar-email">Cambiar email</button>
-                        </div>
-                        <div class="form input-group mb-4">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Nueva contraseña">
-                            <button type="button" class="btn btn-primary perfil-cambiar-pass">Cambiar contraseña</button>
-                        </div>
-                        <div class="text-center">
-                            <button type="button perfil-btn-eliminar" class="btn btn-dark">Eliminar cuenta</button>
-                        </div>
-
+                        <form action="./php/update_nombre.php" method="post">
+                            <div class="form input-group mb-3 mt-3">
+                                <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="Nuevo nombre">
+                                <button class="btn btn-primary perfil-cambiar-nombre">Cambiar nombre</button>
+                            </div>
+                        </form>
+                        <form action="./php/update_apellido.php" method="post">
+                            <div class="form input-group mb-3 mt-3">
+                                <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="Nuevo apellido">
+                                <button class="btn btn-primary perfil-cambiar-nombre">Cambiar apellido</button>
+                            </div>
+                        </form>
+                        <form action="./php/update_email.php" method="post">
+                            <div class="form input-group mb-3 mt-3">
+                                <input type="text" name= "dato" class="form-control" id="floatingInput" placeholder="nuevo@correo.com">
+                                <button class="btn btn-primary perfil-cambiar-nombre">Cambiar email</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="alert alert-success m-3 perfil-success" role="alert">
-            Datos cambiados exitosamente! Recargue la pagina
-        </div>
-
     </div>
     
 </section>
