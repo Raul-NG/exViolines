@@ -28,7 +28,7 @@ include './php/conexion_be.php';
       <div class="row justify-content-center">
         <h3>Por entregar</h3>
     <?php
-      $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion FROM retos
+      $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion, image_id FROM retos
       JOIN usuarios ON retos.grado_id = usuarios.grado_id
       WHERE usuarios.correo = '$_SESSION[user]' AND retos.reto_id
       NOT IN
@@ -38,7 +38,7 @@ include './php/conexion_be.php';
         echo "
         <div class='col-12 col-sm-6 col-md-4 col-lg-4 mt-3'>
           <div class='card'>
-            <img src='./imagenes/retos_imagenes/reto1.jpg' class='card-img-top'
+            <img src='./imagenes/retos_imagenes/reto" . $row['image_id'] . ".jpg' class='card-img-top'
               alt='Palomitas, boletos para el cine y rollo de película' />
             <div class='card-body'>
               <h2 class='card-title'>" . $row['nombre'] . " </h2>
@@ -52,7 +52,7 @@ include './php/conexion_be.php';
                 $row['descripcion'] .
               " </p>
               <div class='center-button'>
-                <a href='./recursosRetos/reto1.jpg' download='Reading and vocabulary'>
+                <a href='./recursosRetos/reto" . $row['image_id'] . ".jpg' download='Reading and vocabulary'>
                   <button type='button' class='btn btn-primary'>Descargar Recurso</button>
                 </a>
               </div>
@@ -67,7 +67,7 @@ include './php/conexion_be.php';
     ?>
     <h3>Entregados</h3>
     <?php
-      $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion FROM retos
+      $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion, image_id FROM retos
       JOIN usuarios ON retos.grado_id = usuarios.grado_id
       JOIN logros ON logros.reto_id = retos.reto_id
       WHERE usuarios.correo = '$_SESSION[user]' AND retos.reto_id");
@@ -75,7 +75,7 @@ include './php/conexion_be.php';
         echo "
         <div class='col-12 col-sm-6 col-md-4 col-lg-4 mt-3'>
           <div class='card'>
-            <img src='./imagenes/retos_imagenes/reto1.jpg' class='card-img-top'
+            <img src='./imagenes/retos_imagenes/reto" . $row['image_id'] . ".jpg' class='card-img-top'
               alt='Palomitas, boletos para el cine y rollo de película' />
             <div class='card-body'>
               <h2 class='card-title'>" . $row['nombre'] . " </h2>
