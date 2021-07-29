@@ -48,7 +48,7 @@ include './php/conexion_be.php';
                   Puedes acumular mas puntos completando los retos.
                 </p>
                 <div class="center-button">
-                  <a href="/miPerfil.html">
+                  <a href="./miPerfil.php">
                     <button type="button" class="btn btn-primary">Ir a mi Perfil</button>
                   </a>
                 </div>
