@@ -30,10 +30,10 @@ include './php/conexion_be.php';
     <?php
       $retos = mysqli_query($conexion, "SELECT retos.nombre, categoria, puntos, descripcion, image_id, reto_id FROM retos
       JOIN usuarios ON retos.grado_id = usuarios.grado_id
-      WHERE usuarios.correo = '$_SESSION[user]' AND retos.reto_id
+      WHERE usuarios.usuario_id = '$_SESSION[user]' AND retos.reto_id
       NOT IN
       (SELECT logros.reto_id FROM logros
-      WHERE usuarios.correo = '$_SESSION[user]')");
+      WHERE usuario_id = '$_SESSION[user]')");
       while( $row = mysqli_fetch_assoc($retos)) {
         echo "
         <div class='col-12 col-sm-6 col-md-4 col-lg-4 mt-3'>
@@ -57,10 +57,10 @@ include './php/conexion_be.php';
                 </a>
               </div>
               Sube tu evidencia aqui
-              <form action='/action_page.php'>
+              <form action './php/upload_file.php' method='post' enctype='multipart/form-data'>
                 <input type='hidden' name='reto' value='" . $row['reto_id'] . "' />
-                <input type='file' id='myFile' name='filename'>
-                <input type='submit'>
+                <input type='file' id='myFile' name='file'>
+                <input type='submit' name='submit' value='Entregar'>
               </form>
             </div>
           </div>
@@ -71,9 +71,8 @@ include './php/conexion_be.php';
     </div>
     <?php
       $retos = mysqli_query($conexion, "SELECT * FROM logros
-      JOIN usuarios ON logros.usuario_id = usuarios.usuario_id
       JOIN retos ON logros.reto_id = retos.reto_id
-      WHERE usuarios.correo = '$_SESSION[user]' AND retos.reto_id");
+      WHERE usuario_id = '$_SESSION[user]' AND retos.reto_id");
       while( $row = mysqli_fetch_assoc($retos)) {
         echo "
         <div class='col-12 col-sm-6 col-md-4 col-lg-4 mt-3'>

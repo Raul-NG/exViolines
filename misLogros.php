@@ -38,8 +38,7 @@ include './php/conexion_be.php';
                   <?php
                   $puntos = mysqli_query($conexion, "SELECT SUM(puntos) FROM logros
                   JOIN retos ON retos.reto_id = logros.reto_id
-                  JOIN usuarios ON usuarios.usuario_id = logros.usuario_id
-                  WHERE correo = '$_SESSION[user]' ");
+                  WHERE usuario_id = '$_SESSION[user]' ");
                   while ($res = mysqli_fetch_assoc($puntos)) {
                     echo "<p class='card-points-2'> " . $res['SUM(puntos)'] . " puntos</p>";
                   }
