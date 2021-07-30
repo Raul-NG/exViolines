@@ -36,7 +36,6 @@ include './php/conexion_be.php';
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
                 <div class="card">
                     <?php
-                    echo '<p> ' . $_SESSION['user'] . '</p>';
                     $info = mysqli_query($conexion, "SELECT usuario_id, nombre, correo, apellido, grado_id, fecha FROM exviolines.usuarios
                     WHERE usuario_id = '$_SESSION[user]'") or die(mysqli_error($conexion));
                     while( $row = mysqli_fetch_assoc($info)) {
