@@ -35,26 +35,26 @@ include './php/conexion_be.php';
         <div class='title'>Responde brevemente por favor:</div><br>
         <div class='text'>Continúo realizando las actividades que hacia en VFP antes, cual sea tu respuesta menciona el
           porque.</div>
-        <textarea name='pregunta_1' id='pregunta_1' cols='40' rows='8'></textarea>
+        <textarea name='pregunta_1' id='pregunta_1' cols='50' rows='11'></textarea>
         <div class='text'>Formar parte de VFP me ayudó a desarrollar mis habilidades y talentos,cual sea tu respuesta
           menciona el porque.
         </div>
-        <textarea name='pregunta_2' id='pregunta_2' cols='40' rows='8'></textarea>
+        <textarea name='pregunta_2' id='pregunta_2' cols='50' rows='11'></textarea>
         <br>
     </div>
     <div class='preguntas'>
         <div class='title'>Dinos como te has sentido después de formar parte de VFP:</div><br>
-        <textarea name='pregunta_3' id='pregunta_3' cols='40' rows='8'></textarea>
+        <textarea name='pregunta_3' id='pregunta_3' cols='50' rows='11'></textarea>
         <div class='title'>¿Te gustaría asistir a una reunión con tus compañeros?
           </div><br>
-        <textarea name='pregunta_4' id='pregunta_4' cols='40' rows='8'></textarea>
+        <textarea name='pregunta_4' id='pregunta_4' cols='50' rows='11'></textarea>
         <br>
         <input type='submit' value='Entregar Respuestas'>
       </form>
     </div>
     <div class='preguntas'>
       <div class='title'>Video de Seguimiento</div><br>
-      <video width='320' height='240' controls>
+      <video width='650' height='350' controls>
         <source src='/imagenes/ExaViolines.mp4' type='video/mp4'>
         Tu Navegador no puede reproducir este video, intenta cambiar a Firefox, Chrom o Edge.
       </video>
