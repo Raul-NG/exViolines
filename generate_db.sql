@@ -38,7 +38,7 @@ CREATE TABLE `usuarios` (
 CREATE TABLE `logros` (
   `usuario_id` int,
   `reto_id` int,
-  `archivo` varbinary(32),
+  `tipo_archivo` varchar(100),
   `fecha` timeStamp default NOW(),
   PRIMARY KEY (`usuario_id`, `reto_id`),
   FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`usuario_id`),
@@ -119,9 +119,8 @@ VALUES ('Reto 5: Meistermaler', 'Aleman', 'Dibuja cada objeto con su color corre
 -- INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
 -- VALUES ('', '', '', 10, 1);
 
+INSERT INTO logros(usuario_id, reto_id)
+VALUES (1, 4);
 
-INSERT INTO logros(usuario_id, reto_id, archivo)
-VALUES (1, 4, "ASDASD");
-
-INSERT INTO logros(usuario_id, reto_id, archivo)
-VALUES (1, 5, "ASDASD");
+INSERT INTO logros(usuario_id, reto_id)
+VALUES (1, 6);
