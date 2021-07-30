@@ -36,8 +36,9 @@ include './php/conexion_be.php';
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
                 <div class="card">
                     <?php
-                    $info = mysqli_query($conexion, "SELECT usuario_id, nombre, apellido, grado_id, fecha FROM exviolines.usuarios
-                    WHERE correo = '$_SESSION[user]'");
+                    echo '<p> ' . $_SESSION['user'] . '</p>';
+                    $info = mysqli_query($conexion, "SELECT usuario_id, nombre, correo, apellido, grado_id, fecha FROM exviolines.usuarios
+                    WHERE usuario_id = '$_SESSION[user]'") or die(mysqli_error($conexion));
                     while( $row = mysqli_fetch_assoc($info)) {
                         echo "<img src='https://robohash.org/". $row['usuario_id'] ."&size=300x300' class='card-img-top perfil-foto'>
                         <div class='card-body'>
@@ -46,7 +47,7 @@ include './php/conexion_be.php';
                             <table class='table table-borderless'>
                                 <tr>
                                     <td><b>Email</b></td>
-                                    <td class='perfil-email'>". $_SESSION['user'] ."</td>
+                                    <td class='perfil-email'>". $row['correo'] ."</td>
                                 </tr>
                                 <tr>
                                     <td><b>Grado de egreso</b></td>

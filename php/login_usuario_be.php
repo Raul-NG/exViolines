@@ -7,11 +7,13 @@
 
 
     $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo'
-                    and password= '$contrasena' "); 
+                    and password= '$contrasena' ");
 
     if(mysqli_num_rows($validar_login) >0){
+        while($row = mysqli_fetch_assoc($validar_login)){
+            $_SESSION['user'] = $row['usuario_id'];
+        }
         $_SESSION['loggedin'] = true;
-        $_SESSION['user'] = $correo;
         header("Location: ../inicio.php");
         exit;
     }else{
