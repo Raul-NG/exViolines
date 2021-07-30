@@ -8,7 +8,7 @@
 
 .main__container{
     width: 100%;
-    height: 93.5%;
+    height: 100vh;
     display: flex;
     padding: 50px;
     background-color:rgb(58, 183, 255);

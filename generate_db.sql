@@ -38,7 +38,7 @@ CREATE TABLE `usuarios` (
 CREATE TABLE `logros` (
   `usuario_id` int,
   `reto_id` int,
-  `tipo_archivo` varchar(100),
+  `file_name` varchar(100),
   `fecha` timeStamp default NOW(),
   PRIMARY KEY (`usuario_id`, `reto_id`),
   FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`usuario_id`),
@@ -51,6 +51,17 @@ CREATE TABLE `eventos` (
   `fecha` datetime,
   `generacion` varchar(50),
   PRIMARY KEY (`evento_id`)
+);
+
+CREATE TABLE `seguimientos` (
+	`seguimiento_id` int auto_increment,
+	`usuario_id` int,
+	`pregunta_1` varchar(255),
+	`pregunta_2` varchar(255),
+	`pregunta_3` varchar(255),
+    `pregunta_4` varchar(255),
+	PRIMARY KEY (`seguimiento_id`),
+	FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`usuario_id`)
 );
 
 INSERT INTO grados(anno, grado)

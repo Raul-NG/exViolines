@@ -1,5 +1,6 @@
 <?php
 session_start();
+include './php/conexion_be.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,38 +22,45 @@ session_start();
 <body>
 <?php include('navbar.php');?>
   <div class="main__container">
-    <div class="preguntas">
-      <form action="action_page.php">
-        <div class="title">Responde brevemente por favor:</div><br>
-        <div class="text">Continúo realizando las actividades que hacia en VFP antes, cual sea tu respuesta menciona el
+    <?php
+    $sql = "SELECT * FROM seguimientos WHERE usuario_id = '$_SESSION[user]'";
+    $resultado = mysqli_query($conexion, $sql);
+    if (mysqli_num_rows($resultado) >0) {
+      echo " <div class='encuesta'>
+      <h2>Gracias por realizar la encuesta!</h2> 
+    </div>";
+    } else {
+      echo "<div class='preguntas'>
+      <form action='./php/add_seguimiento.php' method='post'>
+        <div class='title'>Responde brevemente por favor:</div><br>
+        <div class='text'>Continúo realizando las actividades que hacia en VFP antes, cual sea tu respuesta menciona el
           porque.</div>
-        <textarea name="Entrada" id="respuesta" cols="23" rows="5"></textarea>
-        <div class="text">Formar parte de VFP me ayudó a desarrollar mis habilidades y talentos,cual sea tu respuesta
+        <textarea name='pregunta_1' id='pregunta_1' cols='40' rows='8'></textarea>
+        <div class='text'>Formar parte de VFP me ayudó a desarrollar mis habilidades y talentos,cual sea tu respuesta
           menciona el porque.
         </div>
-        <textarea name="Entrada" id="respuesta" cols="23" rows="5"></textarea>
+        <textarea name='pregunta_2' id='pregunta_2' cols='40' rows='8'></textarea>
         <br>
-        <input type="submit" value="Entregar Respuestas">
-      </form>
     </div>
-    <div class="preguntas">
-      <form action="action_page.php">
-        <div class="title">Dinos como te has sentido después de formar parte de VFP:</div><br>
-        <textarea name="Entrada" id="respuesta" cols="23" rows="5"></textarea>
-        <div class="title">¿Te gustaría asistir a una reunión con tus compañeros?
+    <div class='preguntas'>
+        <div class='title'>Dinos como te has sentido después de formar parte de VFP:</div><br>
+        <textarea name='pregunta_3' id='pregunta_3' cols='40' rows='8'></textarea>
+        <div class='title'>¿Te gustaría asistir a una reunión con tus compañeros?
           </div><br>
-        <textarea name="Entrada" id="respuesta" cols="23" rows="5"></textarea>
+        <textarea name='pregunta_4' id='pregunta_4' cols='40' rows='8'></textarea>
         <br>
-        <input type="submit" value="Entregar Respuestas">
+        <input type='submit' value='Entregar Respuestas'>
       </form>
     </div>
-    <div class="preguntas">
-      <div class="title">Video de Seguimiento</div><br>
-      <video width="320" height="240" controls>
-        <source src="/imagenes/ExaViolines.mp4" type="video/mp4">
+    <div class='preguntas'>
+      <div class='title'>Video de Seguimiento</div><br>
+      <video width='320' height='240' controls>
+        <source src='/imagenes/ExaViolines.mp4' type='video/mp4'>
         Tu Navegador no puede reproducir este video, intenta cambiar a Firefox, Chrom o Edge.
       </video>
-    </div>
+    </div>";
+    }
+    ?>
   </div>
 </body>
 
