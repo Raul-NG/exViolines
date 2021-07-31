@@ -36,11 +36,11 @@ include './php/conexion_be.php';
               <div class="card-body">
                 <h2 class="card-title">Mis Puntos</h2>
                   <?php
-                  $puntos = mysqli_query($conexion, "SELECT SUM(puntos) FROM logros
+                  $puntos = mysqli_query($conexion, "SELECT COALESCE(SUM(puntos), 0) AS suma_puntos FROM logros
                   JOIN retos ON retos.reto_id = logros.reto_id
                   WHERE usuario_id = '$_SESSION[user]' ");
                   while ($res = mysqli_fetch_assoc($puntos)) {
-                    echo "<p class='card-points-2'> " . $res['SUM(puntos)'] . " puntos</p>";
+                    echo "<p class='card-points-2'> " . $res['suma_puntos'] . " puntos</p>";
                   }
                   ?>
                 <p class="card-text">
