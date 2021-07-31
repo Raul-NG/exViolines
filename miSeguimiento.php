@@ -55,7 +55,7 @@ include './php/conexion_be.php';
     <div class='preguntas'>
       <div class='title'>Video de Seguimiento</div><br>
       <video width='650' height='350' controls>
-        <source src='/imagenes/ExaViolines.mp4' type='video/mp4'>
+        <source src='imagenes/ExaViolines.mp4' type='video/mp4'>
         Tu Navegador no puede reproducir este video, intenta cambiar a Firefox, Chrom o Edge.
       </video>
     </div>";
