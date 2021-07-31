@@ -56,7 +56,7 @@ session_start();
 
                     <h2>Inicia sesión</h2>
                     <input type="text" placeholder="Correo Electronico" name="correo" required>
-                    <input type="password" placeholder="Contraseña" name="contrasena" required>
+                    <input type="password" placeholder="Contraseña" name="password" required>
                     <button>Entrar</button>
 
                 </form>
@@ -68,17 +68,19 @@ session_start();
 
                     <!--Si necesitan otra entrada avisenme (Hugo)-->
                     <h2>Regístrarse</h2>
-                    <input typer="text" placeholder="Nombre" name="nombre" required>
-                    <input typer="text" placeholder="Apellido" name="apellido" required>
-                    <input typer="text" placeholder="Correo Electronico" name="correo" required>
-                    <input typer="password" placeholder="Contraseña" name="contrasena" required>
-                    <input typer="text" placeholder="Grado" name="grado_id" required>
-                    <!-- <select name="grado" required>
+                    <input type="text" placeholder="Nombre" name="nombre" required>
+                    <input type="text" placeholder="Apellido" name="apellido" required>
+                    <input type="text" placeholder="Correo Electronico" name="correo" required>
+                    <input type="password" placeholder="password" name="password" required>
+                    <select name="grado_id" required>
                         <option value="" disable selected hidden>Selecciona tu Grado</option>
-                        <option name="grado_id">Primero</option>
-                        <option name="grado_id">Segundo</option>
-                        <option name="grado_id">Tercero</option>
-                    </select> -->
+                        <option value="1" name="grado_id">Primero</option>
+                        <option value="2" name="grado_id">Segundo</option>
+                        <option value="3" name="grado_id">Tercero</option>
+                        <option value="4" name="grado_id">Cuarto</option>
+                        <option value="5" name="grado_id">Quinto</option>
+                        <option value="6" name="grado_id">Sexto</option>
+                    </select>
 
                     <button>Registrarse</button>
 

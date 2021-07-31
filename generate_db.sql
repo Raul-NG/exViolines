@@ -25,12 +25,12 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(20),
   `apellido` varchar(50),
   `correo` varchar(50),
-  `password` varchar(100),
+  `password` varchar(256),
   `seguimiento` varchar(100) DEFAULT 'TBA',
   `asistenciaEventos` boolean DEFAULT False,
   `grado_id` int,
   `fecha` timeStamp default NOW(),
-  `rol` varchar(100) DEFAULT 'Alumno',
+  `rol` varchar(100) DEFAULT 'alumno',
   PRIMARY KEY (`usuario_id`),
   FOREIGN KEY (`grado_id`) REFERENCES `grados`(`grado_id`)
 );
@@ -87,7 +87,7 @@ VALUES(2021, 7);
 
 
 INSERT INTO usuarios(nombre, apellido, correo, password, grado_id, rol)
-VALUES ('admin', 'admin', 'admin@admin.com', 'admin', 7, 'admin');
+VALUES ('admin', 'admin', 'admin@admin.com', '$2y$10$Jb/kEq8GEFPmvzVyEfgyeOTZTpCqevT2e1enJHf9jCOwnQFQNMj2S', 7, 'admin');
 
 
 INSERT INTO retos(nombre, categoria, descripcion, puntos, grado_id, image_id)

@@ -5,13 +5,12 @@
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $correo = $_POST['correo'];
-    $contrasena = $_POST['contrasena'];
+    $password = $_POST['password'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $grado_id = $_POST['grado_id'];
-    //Si se quisiera encriptar la contrasena esta la siguiente linea de codigo
-    //$contrasena = hash('sha512', $contrasena);
 
     $query = "INSERT INTO usuarios(nombre, apellido, correo, password, grado_id)
-    VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$grado_id')";
+    VALUES ('$nombre', '$apellido', '$correo', '$hashed_password', '$grado_id')";
 
     //Verficiar que el correo no se repita en la Base de Datos
 
@@ -29,7 +28,6 @@
     }
 
     $ejecutar = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
-
     if($ejecutar){
         echo '
             <script>

@@ -3,19 +3,22 @@
     include 'conexion_be.php';
 
     $correo = $_POST['correo'];
-    $contrasena = $_POST['contrasena'];
+    $password = $_POST['password'];
 
-
-    $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo'
-                    and password= '$contrasena' ");
-
+    $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo'");
+    
     if(mysqli_num_rows($validar_login) >0){
         while($row = mysqli_fetch_assoc($validar_login)){
-            $_SESSION['user'] = $row['usuario_id'];
-        }
-        $_SESSION['loggedin'] = true;
-        header("Location: ../inicio.php");
+            $verificar_password = password_verify($password, $row['password']);
+            if(password_verify($_POST['password'], $row['password'])){
+                $_SESSION['user'] = $row['usuario_id'];
+                $_SESSION['loggedin'] = true;
+                header("Location: ../inicio.php");
         exit;
+            } else {
+                echo "Error de contraseña" . " " . $row['password'] . " " . $_POST['password'] . " " . var_dump($verificar_password);
+            }
+        }
     }else{
         echo '
         
