@@ -130,8 +130,8 @@ VALUES ('Reto 5: Meistermaler', 'Aleman', 'Dibuja cada objeto con su color corre
 -- INSERT INTO Retos(nombre, categoria, descripcion, puntos, grado_id)
 -- VALUES ('', '', '', 10, 1);
 
-INSERT INTO logros(usuario_id, reto_id)
-VALUES (1, 4);
+INSERT INTO logros(usuario_id, reto_id, file_name)
+VALUES (1, 4, '1_2_test.txt');
 
-INSERT INTO logros(usuario_id, reto_id)
-VALUES (1, 6);
+INSERT INTO logros(usuario_id, reto_id, file_name)
+VALUES (1, 6, '1_4_test.txt');
