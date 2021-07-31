@@ -4,10 +4,9 @@
     
     $dato = $_POST['dato'];
 
-    $actualizar = mysqli_query($conexion, "UPDATE usuarios SET correo = '$dato' WHERE correo = '$_SESSION[user]'");
+    $actualizar = mysqli_query($conexion, "UPDATE usuarios SET correo = '$dato' WHERE usuario_id = '$_SESSION[user]'");
 
     if ($actualizar) {
-        $_SESSION['user'] = $dato;
         header('location: ../miPerfil.php');
         exit;
     } else {
