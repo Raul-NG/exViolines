@@ -13,11 +13,13 @@
             if(password_verify($_POST['password'], $row['password'])){
                 $_SESSION['user'] = $row['usuario_id'];
                 $_SESSION['loggedin'] = true;
-                header("Location: ../inicio.php");
+                $_SESSION['rol'] = $row['rol'];
+                if ($_SESSION['rol'] == 'admin'){
+                    header('location: ../admin_dashboard.php');
+                }else{
+                    header("Location: ../inicio.php");
+                }
         exit;
-            } else {
-                echo "Error de contraseña" . " " . $row['password'] . " " . $_POST['password'] . " " . var_dump($verificar_password);
-            }
         }
     }else{
         echo '
