@@ -3,7 +3,7 @@
           bg-dark
           flex-column flex-sm-row
         ">
-      <a class="navbar-brand" href="./inicio.php">Violines por la Paz A.C.</a>
+      <a class='navbar-brand' href='./admin_dashboard.php'>Violines por la Paz A.C.</a>
       <div class="container-fluid justify-content-end">
         <ul class="nav">
         <?php

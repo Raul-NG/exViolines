@@ -35,5 +35,36 @@ Create new activity -->
         include './navbar.php';
         include './php/get_user_finished_activities.php';
         echo "<a href='./php/download_zip.php' class='download btn btn-info' role='button' style=''>Descargar todos los archivos</a>";
+        echo "
+        <div class='col-12 col-sm-6 col-md-4 col-lg-4 mt-3 mx-auto'>
+          <div class='card' style='margin: 50px'>
+            <h3> Agregar nuevo reto</h3>
+            <form action='php/add_reto.php' method='post'  enctype='multipart/form-data'>
+              <div class='card-body'>
+                <label for='nombre'>Nombre: </label>
+                <input type='text' class='form-control' id='nombre' name='nombre' placeholder='Nombre del reto'>
+                <label for='descripcion'>Descripción: </label>
+                <input type='text' class='form-control' id='categoria' name='categoria' placeholder='Categoria'>
+                <label for='descripcion'>Descripción: </label>
+                <textarea class='form-control' id='descripcion' name='descripcion' placeholder='Descripción' rows='5'></textarea>
+                <label for='puntos'>Puntos: </label>
+                <input type='numeric' class='form-control' id='puntos' name='puntos' placeholder='Puntos'>
+                <label for='grado'>Grado: </label>
+                <select class='form-control' name='grado_id' id='grado_id'>
+                    <option value='' hidden>Selecciona un grado</option>
+                    <option value='1'>Primero</option>
+                    <option value='2'>Segundo</option>
+                    <option value='3'>Tercero</option>
+                    <option value='4'>Cuarto</option>
+                    <option value='5'>Quinto</option>
+                    <option value='6'>Sexto</option>
+                    <option value='7'>Admin</option>
+                </select>
+                <label for ='imagen'>Imagen para el reto: </label>
+                <input type='file' class='form-control' id='imagen' name='imagen' placeholder='Imagen para el reto'/>
+                <label for ='recurso'>Recurso para el reto: </label>
+                <input type='file' class='form-control' id='recurso' name='recurso' placeholder='Archivo de recurso para el reto'/>
+                <button type='submit' class='btn btn-primary'>Submit</button>
+    ";
     }
 ?>
