@@ -57,9 +57,9 @@ include './php/conexion_be.php';
                 </a>
               </div>
               Sube tu evidencia aqui
-              <form action './php/upload_file.php' method='post' enctype='multipart/form-data'>
+              <form action='./php/upload_file.php' method='post' enctype='multipart/form-data'>
                 <input type='hidden' name='reto' value='" . $row['reto_id'] . "' />
-                <input type='file' name='file'>
+                <input type='file' name='file' id='file'>
                 <input type='submit' name='submit' value='Entregar'>
               </form>
             </div>
